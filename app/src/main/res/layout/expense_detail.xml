@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_amount_hint"
+                android:inputType="textPersonName"
+                android:padding="26dp"
+                android:textSize="18sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_alignBottom="@+id/editText"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintEnd_toEndOf="@+id/editText" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/date_button"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/black"
+            android:text="@string/date"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableEnd="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="10dp"
+            android:text="@string/select_date"
+            android:textAlignment="textEnd"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/date_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/date_button"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/description"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_button" />
+
+        <TextView
+            android:id="@+id/description_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:text="Description" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/mic_recorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_mic_black_24dp" />
+
+        <TextView
+            android:id="@+id/record_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mic_recorder" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/save_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/design_default_color_primary"
+            android:paddingStart="40dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="20dp"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancel_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/record_status" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/cancel_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/colorAccent"
+            android:paddingStart="40dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="20dp"
+            android:text="@android:string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/save_button" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

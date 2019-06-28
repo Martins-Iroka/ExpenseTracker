@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="text_view">Expense\n\t\t\t\t\t\tTracker</string>
+    <string name="login">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="not_registered">Not Registered?</string>
+    <string name="register">REGISTER</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="category">Category</string>
+    <string name="movies">Movies</string>
+    <string name="food">Food</string>
+    <string name="bills">Bills</string>
+    <string name="loan">Loan</string>
+    <string name="rent">Rent</string>
+    <string name="drinks">Drinks</string>
+    <string name="clothing">Clothing</string>
+    <string name="health_care">Health Care</string>
+    <string name="education">Education</string>
+    <string name="household">Household</string>
+    <string name="enter_amount_hint">Enter Amount</string>
+    <string name="date">Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="description">Description</string>
+    <string name="converting_to_text">Converting to text</string>
+    <string name="save">Save</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="recording_message">Recording…</string>
+</resources>

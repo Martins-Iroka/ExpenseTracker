@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>@string/category</item>
+        <item>@string/movies</item>
+        <item>@string/food</item>
+        <item>@string/bills</item>
+        <item>@string/loan</item>
+        <item>@string/rent</item>
+        <item>@string/drinks</item>
+        <item>@string/clothing</item>
+        <item>@string/health_care</item>
+        <item>@string/education</item>
+        <item>@string/household</item>
+    </string-array>
+</resources>
