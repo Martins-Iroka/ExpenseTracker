@@ -6,19 +6,19 @@ import com.martdev.android.expensetrackr.data.dao.DailyExpenseDao
 import com.martdev.android.expensetrackr.data.dao.MonthlyExpDao
 import com.martdev.android.expensetrackr.utils.AppExecutors
 
-class ExpenseLocalDataSource private constructor(
+class ExpenseLocalDataSource(
         private val appExecutors: AppExecutors,
         private val monthlyExpDao: MonthlyExpDao,
         private val dailyExpenseDao: DailyExpenseDao
-) : ExpenseDSContract {
+) : ExpenseDataSource {
 
     companion object {
-        private var INSTANCE: ExpenseDSContract? = null
+        private var INSTANCE: ExpenseDataSource? = null
 
         @JvmStatic
         fun getInstance(appExecutors: AppExecutors,
                         monthlyExpDao: MonthlyExpDao,
-                        dailyExpenseDao: DailyExpenseDao): ExpenseDSContract {
+                        dailyExpenseDao: DailyExpenseDao): ExpenseDataSource {
             if (INSTANCE == null) {
                 synchronized(ExpenseLocalDataSource::javaClass) {
                     INSTANCE = ExpenseLocalDataSource(appExecutors, monthlyExpDao, dailyExpenseDao)
@@ -29,7 +29,7 @@ class ExpenseLocalDataSource private constructor(
         }
     }
 
-    override fun getMonthlyExpenses(monthlyExpenses: ExpenseDSContract.LoadExpenses<List<MonthlyExpense>>) {
+    override fun getMonthlyExpenses(monthlyExpenses: ExpenseDataSource.LoadExpenses<List<MonthlyExpense>>) {
         appExecutors.diskIO.execute{
             val expenses = monthlyExpDao.getMonthlyExpenses()
             appExecutors.mainThread.execute {
@@ -38,7 +38,7 @@ class ExpenseLocalDataSource private constructor(
         }
     }
 
-    override fun getDailyExpenses(date: String, dailyExpenses: ExpenseDSContract.LoadExpenses<List<DailyExpense>>) {
+    override fun getDailyExpenses(date: String, dailyExpenses: ExpenseDataSource.LoadExpenses<List<DailyExpense>>) {
         appExecutors.diskIO.execute {
             val expenses = dailyExpenseDao.getDailyExpenses(date)
             appExecutors.mainThread.execute {
@@ -47,7 +47,7 @@ class ExpenseLocalDataSource private constructor(
         }
     }
 
-    override fun getDailyExpByCategory(date: String, category: String, expenseByCategory: ExpenseDSContract.LoadExpenses<List<DailyExpense>>) {
+    override fun getDailyExpByCategory(date: String, category: String, expenseByCategory: ExpenseDataSource.LoadExpenses<List<DailyExpense>>) {
         appExecutors.diskIO.execute {
             val categoryName = dailyExpenseDao.getDailyExpByCategory(date, category)
             appExecutors.mainThread.execute {
@@ -56,7 +56,7 @@ class ExpenseLocalDataSource private constructor(
         }
     }
 
-    override fun getMonthlyExpense(expenseId: String, monthlyExpense: ExpenseDSContract.LoadExpense<MonthlyExpense>) {
+    override fun getMonthlyExpense(expenseId: String, monthlyExpense: ExpenseDataSource.LoadExpense<MonthlyExpense>) {
         appExecutors.diskIO.execute {
             val expense = monthlyExpDao.getMonthlyExpense(expenseId)
             appExecutors.mainThread.execute {
@@ -65,7 +65,7 @@ class ExpenseLocalDataSource private constructor(
         }
     }
 
-    override fun getDailyExpense(expenseId: String, dailyExpense: ExpenseDSContract.LoadExpense<DailyExpense>) {
+    override fun getDailyExpense(expenseId: String, dailyExpense: ExpenseDataSource.LoadExpense<DailyExpense>) {
         appExecutors.diskIO.execute {
             val expense = dailyExpenseDao.getDailyExpense(expenseId)
             appExecutors.mainThread.execute {
@@ -95,6 +95,18 @@ class ExpenseLocalDataSource private constructor(
     override fun deleteDailyExpense(dailyExpId: String) {
         appExecutors.diskIO.execute {
             dailyExpenseDao.deleteDailyExpense(dailyExpId)
+        }
+    }
+
+    override fun deleteDailyByCategory(category: String) {
+        appExecutors.diskIO.execute {
+            dailyExpenseDao.deleteDailyExpenseByCategory(category)
+        }
+    }
+
+    override fun deleteDailyExpensesByDate(date: String) {
+        appExecutors.diskIO.execute {
+            dailyExpenseDao.deleteDailyExpenseByDate(date)
         }
     }
 

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.martdev.android.expensetrackr">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
@@ -20,6 +21,9 @@
         </activity>
         <activity android:name=".RegistrationActivity"/>
         <activity android:name=".addeditexpense.AddEditExpenseActivity" />
+        <activity android:name=".dailyexpenselist.DailyExpensesActivity" />
+        <activity android:name=".monthlyexpenses.MonthlyExpensesActivity" >
+        </activity>
     </application>
 
 </manifest>

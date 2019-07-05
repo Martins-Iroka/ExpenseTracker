@@ -1,9 +1,9 @@
 package com.martdev.android.expensetrackr.data.database
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import android.content.Context
 import com.martdev.android.expensetrackr.data.dao.DailyExpenseDao
 import com.martdev.android.expensetrackr.data.dao.IncomeDao
@@ -13,12 +13,12 @@ import com.martdev.android.expensetrackr.data.MonthlyExpense
 import com.martdev.android.expensetrackr.data.dao.MonthlyExpDao
 import com.martdev.android.expensetrackr.data.dateconverter.DateConverter
 
-@Database(entities = [DailyExpense::class, Income::class, MonthlyExpense::class], version = 1)
+@Database(entities = [DailyExpense::class, MonthlyExpense::class], version = 1)
 @TypeConverters(DateConverter::class)
 abstract class ExpenseTrackerDB : RoomDatabase() {
 
     abstract fun expenseDao(): DailyExpenseDao
-    abstract fun incomeDao(): IncomeDao
+//    abstract fun incomeDao(): IncomeDao
     abstract fun monthlyExpDao(): MonthlyExpDao
 
     companion object {

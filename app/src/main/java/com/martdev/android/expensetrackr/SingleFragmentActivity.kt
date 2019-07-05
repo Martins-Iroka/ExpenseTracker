@@ -1,16 +1,16 @@
 package com.martdev.android.expensetrackr
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 abstract class SingleFragmentActivity : AppCompatActivity() {
 
     abstract fun createFragment(): Fragment
 
-    abstract fun setToolbarTitle(actionBar: ActionBar?)
+    abstract fun setToolbarTitle(toolbar: Toolbar, actionBar: ActionBar?)
 
     open fun setupPresenter(fragment: Fragment) {}
 
@@ -31,7 +31,7 @@ abstract class SingleFragmentActivity : AppCompatActivity() {
         }
 
         setupPresenter(fragment)
-        setToolbarTitle(actionBar)
+        setToolbarTitle(toolbar, actionBar)
     }
 
     override fun onSupportNavigateUp(): Boolean {

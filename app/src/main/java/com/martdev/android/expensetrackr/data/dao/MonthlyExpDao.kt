@@ -1,10 +1,12 @@
 package com.martdev.android.expensetrackr.data.dao
 
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.OnConflictStrategy
-import android.arch.persistence.room.Query
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.martdev.android.expensetrackr.data.MonthlyExpense
 
+@Dao
 interface MonthlyExpDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/all_expenses"
+        android:id="@+id/all_expenses"/>
+
+    <item android:title="@string/movies"
+        android:id="@+id/movies"/>
+
+    <item android:title="@string/food"
+        android:id="@+id/food"/>
+
+    <item android:title="@string/bills"
+        android:id="@+id/bills"/>
+
+    <item android:title="@string/loan"
+        android:id="@+id/loan"/>
+
+    <item android:title="@string/rent"
+        android:id="@+id/rent"/>
+
+    <item android:title="@string/drinks"
+        android:id="@+id/drinks"/>
+
+    <item android:title="@string/clothing"
+        android:id="@+id/clothing"/>
+
+    <item android:title="@string/health_care"
+        android:id="@+id/health_care"/>
+
+    <item android:title="@string/education"
+        android:id="@+id/education"/>
+
+    <item android:title="@string/household"
+        android:id="@+id/household"/>
+</menu>

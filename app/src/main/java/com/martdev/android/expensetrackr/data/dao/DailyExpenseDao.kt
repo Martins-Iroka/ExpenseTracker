@@ -1,9 +1,10 @@
 package com.martdev.android.expensetrackr.data.dao
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import com.martdev.android.expensetrackr.data.DailyExpense
 
-@Dao interface DailyExpenseDao {
+@Dao
+interface DailyExpenseDao {
 
     @Query("SELECT * FROM expense WHERE date = :date")
     fun getDailyExpenses(date: String): List<DailyExpense>
@@ -22,4 +23,10 @@ import com.martdev.android.expensetrackr.data.DailyExpense
 
     @Query("DELETE FROM expense WHERE expenseId = :id")
     fun deleteDailyExpense(id: String)
+
+    @Query("DELETE FROM expense WHERE category = :category")
+    fun deleteDailyExpenseByCategory(category: String)
+
+    @Query("DELETE FROM expense WHERE date_in_String = :date")
+    fun deleteDailyExpenseByDate(date: String)
 }

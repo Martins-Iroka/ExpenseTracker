@@ -6,20 +6,17 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
-import android.support.design.button.MaterialButton
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.TextInputEditText
-import android.support.v4.app.Fragment
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import com.martdev.android.expensetrackr.R
 import com.martdev.android.expensetrackr.dialog.DateDialog
 import java.util.*
@@ -50,12 +47,12 @@ class AddEditExpenseFragment : Fragment(), AddEditExpenseContract.View, Recognit
 
     private lateinit var mAmount: TextInputEditText
     private lateinit var mSpinner: Spinner
-    private lateinit var mDateButton: MaterialButton
+    private lateinit var mDateButton: Button
     private lateinit var mDescription: TextView
     private lateinit var mRecordingStatus: TextView
     private lateinit var mRecordButton: FloatingActionButton
-    private lateinit var mSaveButton: MaterialButton
-    private lateinit var mCancelButton: MaterialButton
+    private lateinit var mSaveButton: Button
+    private lateinit var mCancelButton: Button
 
     private lateinit var mSpeech: SpeechRecognizer
     private lateinit var mRecognizerIntent: Intent
@@ -95,7 +92,7 @@ class AddEditExpenseFragment : Fragment(), AddEditExpenseContract.View, Recognit
         mDescription = view.findViewById(R.id.description_result)
 
         mRecordingStatus = view.findViewById(R.id.record_status)
-
+        presenter.hasPermission()
         mRecordButton = view.findViewById(R.id.mic_recorder)
         mRecordButton.setOnClickListener {
             if (presenter.hasPermission()) {

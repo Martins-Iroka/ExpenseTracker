@@ -1,8 +1,8 @@
 package com.martdev.android.expensetrackr.data
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.*
 
 @Entity(tableName = "expense")
@@ -16,5 +16,7 @@ data class DailyExpense(@PrimaryKey @ColumnInfo(name = "expenseId")
                         var categoryId: Int? = null,
                         @ColumnInfo(name = "date")
                         var date: Date = Date(),
+                        @ColumnInfo(name = "date_in_String")
+                        var dateString: String? = null,
                         @ColumnInfo(name = "description")
                         var description: String? = null)

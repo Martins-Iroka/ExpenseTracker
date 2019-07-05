@@ -3,7 +3,7 @@ package com.martdev.android.expensetrackr.data.expensedatasource
 import com.martdev.android.expensetrackr.data.DailyExpense
 import com.martdev.android.expensetrackr.data.MonthlyExpense
 
-interface ExpenseDSContract {
+interface ExpenseDataSource {
 
     interface LoadExpenses<T> {
 
@@ -32,6 +32,10 @@ interface ExpenseDSContract {
     fun deleteMonthlyExpense(monthlyExpId: String)
 
     fun deleteDailyExpense(dailyExpId: String)
+
+    fun deleteDailyByCategory(category: String)
+
+    fun deleteDailyExpensesByDate(date: String)
 
     fun updateDailyExpense(dailyExpense: DailyExpense)
 }

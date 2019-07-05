@@ -29,4 +29,16 @@
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
     <string name="recording_message">Recording…</string>
+    <string name="no_daily_exp">No expenses for this month</string>
+    <string name="new_expense">New Expense</string>
+    <string name="edit_expense">Edit Expense</string>
+    <string name="my_expense">My Expenses</string>
+    <string name="filter_expenses">Filter Expenses</string>
+    <string name="delete_expenses">Delete Expenses</string>
+    <string name="all_expenses">All Expenses</string>
+    <string name="no_category_message">No expenses for %s category</string>
+    <string name="pop_menu">⋮</string>
+    <string name="total_expense">Total Expense</string>
+    <string name="delete_expense">Delete Expense</string>
+    <string name="add_expense">Add Expense</string>
 </resources>

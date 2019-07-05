@@ -1,15 +1,16 @@
 package com.martdev.android.expensetrackr.data.dao
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import com.martdev.android.expensetrackr.data.Income
 
-@Dao interface IncomeDao {
+@Dao
+interface IncomeDao {
 
     @Query("SELECT * FROM income")
     fun getIncomes(): List<Income>
 
     @Query("SELECT * FROM income WHERE incomeId = :id")
-    fun getIncome(id: String)
+    fun getIncome(id: String): Income
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertIncome(income: Income)

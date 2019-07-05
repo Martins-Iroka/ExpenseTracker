@@ -4,8 +4,8 @@ import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
-import android.support.v7.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+import androidx.appcompat.app.AlertDialog
 import android.view.LayoutInflater
 import android.widget.DatePicker
 import com.martdev.android.expensetrackr.R
@@ -52,7 +52,7 @@ class DateDialog : DialogFragment() {
 
         return with(AlertDialog.Builder(this.activity!!)) {
             setView(view)
-            setPositiveButton(android.R.string.ok) { dialog, which ->
+            setPositiveButton(android.R.string.ok) { _, _ ->
                 year = mDatePicker.year
                 month = mDatePicker.month
                 day = mDatePicker.dayOfMonth

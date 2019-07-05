@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 android:inputType="textPersonName"
                 android:padding="26dp"
                 android:textSize="18sp" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
             android:id="@+id/spinner"
@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/editText"
             app:layout_constraintEnd_toEndOf="@+id/editText" />
 
-        <android.support.design.button.MaterialButton
+        <Button
             android:id="@+id/date_button"
             android:layout_width="130dp"
             android:layout_height="50dp"
@@ -100,7 +100,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5"
             tools:text="Description" />
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/mic_recorder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mic_recorder" />
 
-        <android.support.design.button.MaterialButton
+        <Button
             android:id="@+id/save_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/record_status" />
 
-        <android.support.design.button.MaterialButton
+        <Button
             android:id="@+id/cancel_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -166,6 +166,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/save_button" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

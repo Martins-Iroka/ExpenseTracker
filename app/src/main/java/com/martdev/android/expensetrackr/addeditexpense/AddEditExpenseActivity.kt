@@ -2,8 +2,11 @@ package com.martdev.android.expensetrackr.addeditexpense
 
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.Fragment
-import android.support.v7.app.ActionBar
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.widget.Toolbar
+import com.martdev.android.expensetrackr.R
 import com.martdev.android.expensetrackr.SingleFragmentActivity
 import com.martdev.android.expensetrackr.utils.Injection
 
@@ -14,10 +17,10 @@ class AddEditExpenseActivity : SingleFragmentActivity() {
     companion object {
         private const val EXTRA_ID = "expenseId"
 
-        fun newIntent(packageContext: Context, expenseId: String): Intent {
-            val intent = Intent(packageContext, AddEditExpenseActivity::class.java)
-            intent.putExtra(EXTRA_ID, expenseId)
-            return intent
+        fun newIntent(packageContext: Context, expenseId: String?): Intent {
+            return Intent(packageContext, AddEditExpenseActivity::class.java).apply {
+                putExtra(EXTRA_ID, expenseId)
+            }
         }
     }
 
@@ -26,13 +29,13 @@ class AddEditExpenseActivity : SingleFragmentActivity() {
         return AddEditExpenseFragment.newInstance(expenseId)
     }
 
-    override fun setToolbarTitle(actionBar: ActionBar?) {
+    override fun setToolbarTitle(toolbar: Toolbar, actionBar: ActionBar?) {
         actionBar?.run {
-            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_chevron_left_black_24dp)
             setDisplayHomeAsUpEnabled(true)
-            title = if (expenseId == null) "New Expense"
-            else "Edit Expense"
         }
+        if (expenseId == null) toolbar.title = getString(R.string.new_expense)
+        else toolbar.title = getString(R.string.edit_expense)
     }
 
     override fun setupPresenter(fragment: Fragment) {
